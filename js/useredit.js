@@ -1,6 +1,6 @@
 $().ready(() => {
 
-    $.getJSON("http://localhost:8080/Users/Get?id=1")
+    $.getJSON("http://localhost:8080/Users/Get?id=2")
         .then(function(users) {
             console.log(users);
             render(users);
@@ -9,8 +9,10 @@ $().ready(() => {
 
 function render(users) {
     $("#pid").val(users.id);
-    $("#pname").val(users.firstName + " " + users.lastName);
+    $("#pfname").val(users.firstName);
+    $("#plname").val(users.lastName);
     $("#pusername").val(users.userName);
+    $("#ppassword").val(users.password);
     $("#pphone").val(users.phoneNumber);
     $("#pemail").val(users.email);
     $("#previewer").prop("checked", users.reviewer);
